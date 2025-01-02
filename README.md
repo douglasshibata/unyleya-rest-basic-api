@@ -20,7 +20,7 @@ Instale o projeto
   ./mvnw clean package
 ```
     
-## Deploy
+## Rodar local
 
 Para fazer o deploy desse projeto rode
 ```bash
@@ -28,7 +28,7 @@ Para fazer o deploy desse projeto rode
 ```
 Quando finalizar acessar [http://localhost:8080/basic-rest-api](http://localhost:8080/basic-rest-api).
 
-
+## Deploy
 
 Caso queira utilizar o docker
 
