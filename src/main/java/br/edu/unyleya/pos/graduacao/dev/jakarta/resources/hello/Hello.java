@@ -1,4 +1,4 @@
-package br.edu.unyleya.pos.graduacao.dev.jakarta.hello;
+package br.edu.unyleya.pos.graduacao.dev.jakarta.resources.hello;
 
 public class Hello {
 

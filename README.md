@@ -28,6 +28,9 @@ Para fazer o deploy desse projeto rode
 ```
 Quando finalizar acessar [http://localhost:8080/basic-rest-api](http://localhost:8080/basic-rest-api).
 
+## Swagger 
+Para acessar o swagger [http://localhost:8080/basic-rest-api/swagger/](http://localhost:8080/basic-rest-api/swagger/).
+
 ## Deploy
 
 Caso queira utilizar o docker
