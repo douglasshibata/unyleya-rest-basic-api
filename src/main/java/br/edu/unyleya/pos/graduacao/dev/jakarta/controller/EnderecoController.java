@@ -2,8 +2,8 @@ package br.edu.unyleya.pos.graduacao.dev.jakarta.controller;
 
 import java.util.List;
 
-import br.edu.unyleya.pos.graduacao.dev.jakarta.model.Empresa;
-import br.edu.unyleya.pos.graduacao.dev.jakarta.repository.EmpresaRepository;
+import br.edu.unyleya.pos.graduacao.dev.jakarta.model.Endereco;
+import br.edu.unyleya.pos.graduacao.dev.jakarta.repository.EnderecoRepository;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.inject.Inject;
@@ -19,17 +19,18 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.WebApplicationException;
 import jakarta.ws.rs.core.Response;
 
-@Path("empresa")
-@Tag(name = "Empresa REST", description = "CRUD da empresa")
-public class EmpresaController {
+
+@Path("endereco")
+@Tag(name = "Endereco REST", description = "CRUD da endereco")
+public class EnderecoController {
 
     @Inject
-    private EmpresaRepository repository;
+    private EnderecoRepository repository;
 
     @GET
     @Path("{id}")
     @Produces("application/json")
-    @Operation(summary = "Get empresa by id", description = "Get empresa by id")
+    @Operation(summary = "Get endereco by id", description = "Get endereco by id")
     // @ApiResponses(value = {
     // @ApiResponse(responseCode = "200", description = "Successfully retrieved
     // list"
@@ -37,26 +38,26 @@ public class EmpresaController {
     // // schema = @Schema(implementation = Customer.class))
     // ),
     // @ApiResponse(responseCode = "500", description = "Internal server error")
-    public Empresa findById(@PathParam("id") Long id) {
+    public Endereco findById(@PathParam("id") Long id) {
         return repository.find(id);
     }
 
     @GET
     @Produces("application/json")
-    @Operation(summary = "Get all empresa", description = "Get all empresa")
-    public List<Empresa> findAll() {
+    @Operation(summary = "Get all endereco", description = "Get all endereco")
+    public List<Endereco> findAll() {
 
-        return repository.findAll(Empresa.class);
+        return repository.findAll(Endereco.class);
     }
 
     @POST
     @Consumes("application/json")
     @Produces("application/json")
-    @Operation(summary = "Post empresa", description = "Post empresa")
-    public Empresa create(Empresa empresa) {
+    @Operation(summary = "Post endereco", description = "Post endereco")
+    public Endereco create(Endereco endereco) {
 
         try {
-            return repository.save(empresa);
+            return repository.save(endereco);
         } catch (PersistenceException ex) {
 
             throw new WebApplicationException(Response.Status.BAD_REQUEST);
@@ -65,7 +66,7 @@ public class EmpresaController {
 
     @DELETE
     @Path("{id}")
-    @Operation(summary = "Delete empresa", description = "Delete empresa")
+    @Operation(summary = "Delete endereco", description = "Delete endereco")
     public void delete(@PathParam("id") Long id) {
 
         try {
@@ -79,11 +80,11 @@ public class EmpresaController {
     @PUT
     @Consumes("application/json")
     @Produces("application/json")
-    @Operation(summary = "Atualiza empresa", description = "Atualiza empresa")
-    public Empresa update(Empresa empresa) {
+    @Operation(summary = "Atualiza endereco", description = "Atualiza endereco")
+    public Endereco update(Endereco endereco) {
 
         try {
-            return repository.update(empresa);
+            return repository.update(endereco);
         } catch (PersistenceException ex) {
 
             throw new WebApplicationException(Response.Status.BAD_REQUEST);
