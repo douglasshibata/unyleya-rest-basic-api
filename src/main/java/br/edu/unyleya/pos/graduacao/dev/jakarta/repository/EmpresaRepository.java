@@ -14,7 +14,7 @@ public class EmpresaRepository extends  BaseRepository<Empresa> {
     public Empresa save(Empresa entity) {
         entity = super.save(entity);
         System.out.println(entity.toString());
-        System.out.println(entity.getEndereco().toString());
+        System.out.println(entity.getEndereco());
         if(entity.getEndereco() != null){
             entity.getEndereco().setEmpresa(entity);
             entity.setEndereco(endRepository.save(entity.getEndereco()));
