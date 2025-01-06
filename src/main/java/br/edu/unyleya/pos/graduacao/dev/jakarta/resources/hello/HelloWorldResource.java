@@ -14,15 +14,9 @@ public class HelloWorldResource {
 
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
-	 @Operation(summary = "Hello World", description = "Returns a hello world")
-    // @ApiResponses(value = {
-    //         @ApiResponse(responseCode = "200", description = "Successfully retrieved list"
-    //                 // content = @Content(mediaType = "application/json",
-    //                 //         schema = @Schema(implementation = Customer.class))
-	// 				),
-    //         @ApiResponse(responseCode = "500", description = "Internal server error")
+	@Operation(summary = "Hello World", description = "Returns a hello world")
 	public Hello hello(@QueryParam("name") String name) {
-		if ((name == null) || name.trim().isEmpty())  {
+		if ((name == null) || name.trim().isEmpty()) {
 			name = "world";
 		}
 

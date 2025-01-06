@@ -2,7 +2,7 @@
 
 Criação de uma API rest para o curso de pós graduação
 
-**Objetivo**: Implementar uma API com um CRUD básico
+**Objetivo**: Implementar uma API com um CRUD básico de empresa
 O sistema deverá permitir as operações de CRUD através de uma API REST
 
 ## Stack utilizada
